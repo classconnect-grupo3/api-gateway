@@ -4,5 +4,52 @@
     "version": "1.0.0",
     "title": "My Zuplo API"
   },
-  "paths": {}
+  "paths": {
+    "/register": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "Register a new user to the app",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "a1eb384a-6570-40d7-8256-1a22e6f62eec"
+      }
+    },
+    "/login": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "Login to the app",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "8a36d5e6-ca4f-4352-bb12-72ff7d7b70a0"
+      }
+    }
+  }
 }
