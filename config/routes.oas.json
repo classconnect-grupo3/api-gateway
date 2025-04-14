@@ -73,6 +73,27 @@
         },
         "operationId": "4c3ec49a-e965-48b7-8c6a-4a5c77fbeca7"
       }
+    },
+    "/hola": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "asd",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "default",
+            "module": "$import(./modules/hello-world)",
+            "options": {}
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "eb72dfc0-7aa1-4647-abb3-4ad4ef370462"
+      }
     }
   }
 }
