@@ -13,7 +13,7 @@
         "summary": "Register a new user to the app",
         "description": "",
         "x-zuplo-route": {
-          "corsPolicy": "none",
+          "corsPolicy": "anything-goes",
           "handler": {
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
@@ -118,6 +118,51 @@
           }
         },
         "operationId": "eed57cbf-fa74-4402-987f-e7a411b43098"
+      }
+    },
+    "/users/me": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "Retrieves user data",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "firebase-jwt-inbound-4"
+            ]
+          }
+        },
+        "operationId": "f6363e48-445a-4f8b-893b-775d11dd897c"
+      },
+      "patch": {
+        "summary": "Modifies user data",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "firebase-jwt-inbound-5"
+            ]
+          }
+        },
+        "operationId": "511c9d43-515a-4570-b657-ea45e571de8d"
       }
     }
   }
