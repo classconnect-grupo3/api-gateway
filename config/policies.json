@@ -47,6 +47,30 @@
       },
       "name": "firebase-jwt-inbound-3",
       "policyType": "firebase-jwt-inbound"
+    },
+    {
+      "handler": {
+        "export": "FirebaseJwtInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false,
+          "projectId": "users-service-auth-4b330"
+        }
+      },
+      "name": "firebase-jwt-inbound-4",
+      "policyType": "firebase-jwt-inbound"
+    },
+    {
+      "handler": {
+        "export": "FirebaseJwtInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false,
+          "projectId": "users-service-auth-4b330"
+        }
+      },
+      "name": "firebase-jwt-inbound-5",
+      "policyType": "firebase-jwt-inbound"
     }
   ]
 }
