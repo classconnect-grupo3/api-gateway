@@ -6,71 +6,19 @@
         "module": "$import(@zuplo/runtime)",
         "options": {
           "allowUnauthenticatedRequests": false,
-          "projectId": "my-project-id"
-        }
-      },
-      "name": "firebase-jwt-inbound",
-      "policyType": "firebase-jwt-inbound"
-    },
-    {
-      "handler": {
-        "export": "FirebaseJwtInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "allowUnauthenticatedRequests": false,
-          "projectId": "my-project-id"
-        }
-      },
-      "name": "firebase-jwt-inbound-1",
-      "policyType": "firebase-jwt-inbound"
-    },
-    {
-      "handler": {
-        "export": "FirebaseJwtInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "allowUnauthenticatedRequests": false,
           "projectId": "users-service-auth-4b330"
         }
       },
-      "name": "firebase-jwt-inbound-2",
+      "name": "bearer-token-verification",
       "policyType": "firebase-jwt-inbound"
-    },
+    }
+  ],
+    "corsPolicies": [
     {
-      "handler": {
-        "export": "FirebaseJwtInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "allowUnauthenticatedRequests": false,
-          "projectId": "users-service-auth-4b330"
-        }
-      },
-      "name": "firebase-jwt-inbound-3",
-      "policyType": "firebase-jwt-inbound"
-    },
-    {
-      "handler": {
-        "export": "FirebaseJwtInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "allowUnauthenticatedRequests": false,
-          "projectId": "users-service-auth-4b330"
-        }
-      },
-      "name": "firebase-jwt-inbound-4",
-      "policyType": "firebase-jwt-inbound"
-    },
-    {
-      "handler": {
-        "export": "FirebaseJwtInboundPolicy",
-        "module": "$import(@zuplo/runtime)",
-        "options": {
-          "allowUnauthenticatedRequests": false,
-          "projectId": "users-service-auth-4b330"
-        }
-      },
-      "name": "firebase-jwt-inbound-5",
-      "policyType": "firebase-jwt-inbound"
+      "name": "custom-cors",
+      "allowedOrigins": "https://web-backoffice-production-b8e3.up.railway.app",
+      "allowedMethods": ["OPTIONS", "POST", "GET"],
+      "allowCredentials": true
     }
   ]
 }

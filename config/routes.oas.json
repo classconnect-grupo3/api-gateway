@@ -10,7 +10,7 @@
         "pathMode": "open-api"
       },
       "post": {
-        "summary": "Register a new user to the app",
+        "summary": "[USERS] Register a new user to the app",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "anything-goes",
@@ -28,15 +28,389 @@
         "operationId": "a1eb384a-6570-40d7-8256-1a22e6f62eec"
       }
     },
-    "/login": {
+    "/users/me/location": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
       "post": {
-        "summary": "Login to the app",
+        "summary": "[USERS] Defines a location for the user",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "eed57cbf-fa74-4402-987f-e7a411b43098"
+      }
+    },
+    "/users/me": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[USERS] Retrieves user data",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "f6363e48-445a-4f8b-893b-775d11dd897c"
+      },
+      "patch": {
+        "summary": "[USERS] Modifies user data",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "511c9d43-515a-4570-b657-ea45e571de8d"
+      }
+    },
+    "/login/google": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[USERS] login to the app with google",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "1706d46c-7a1c-4054-baa6-a4de1185005b"
+      }
+    },
+    "/courses": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[COURSES] Create a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "7e3a7746-48bd-456b-a7dd-fe708ea44691"
+      },
+      "get": {
+        "summary": "[COURSES] Retrieve all courses",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "65c4691e-0ef8-4d5b-b647-1245afdbdfaf"
+      }
+    },
+    "/courses/teacher/{teacherId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get all courses with a specific Teacher ID",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "ba7701d3-bce2-4526-941a-d244d84024e8"
+      }
+    },
+    "/users/search": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[USERS] Search a user on the app",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "e5b2a46a-01ae-42a4-9061-ce6b8ad4a7f6"
+      }
+    },
+    "/courses/title/{title}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get courses by title",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "f820ad0d-e6ee-464d-af9f-d91e4266c049"
+      }
+    },
+    "/courses/{id}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "delete": {
+        "summary": "[COURSES] Delete a Course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "44f62815-a06f-4116-9834-c46878420085"
+      },
+      "put": {
+        "summary": "[COURSES] Update course information",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "1d25b459-f2e2-4d51-b24c-7d01d4072d4d"
+      }
+    },
+    "/modules/course/{courseId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[MODULES] Get modules by Course ID",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "764d0503-8fc1-4740-8687-2970d0692015"
+      }
+    },
+    "/modules/{id}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[MODULES] Get module by ID",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "23c63862-9237-41fa-adae-997568bee0be"
+      }
+    },
+    "/modules": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[MODULES] Create a module in a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "0a7a972f-9bf0-4bda-95a3-3ed868483399"
+      }
+    },
+    "/modules/{moduleId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "delete": {
+        "summary": "[MODULES] Delete module",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "ab0d624f-74a1-40cb-8381-42fd4e93378d"
+      },
+      "put": {
+        "summary": "[MODULES] Update module info",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "36c92326-31f8-4c8b-aeb1-64a8e9a4ebbd"
+      }
+    },
+    "/login/email": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[USERS] Login to the app",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
           "handler": {
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
@@ -51,81 +425,436 @@
         "operationId": "8a36d5e6-ca4f-4352-bb12-72ff7d7b70a0"
       }
     },
-    "/add": {
-      "x-zuplo-path": {
-        "pathMode": "open-api"
-      },
-      "post": {
-        "summary": "Add one to a variable",
-        "description": "",
-        "x-zuplo-route": {
-          "corsPolicy": "none",
-          "handler": {
-            "export": "default",
-            "module": "$import(./modules/prueba)",
-            "options": {}
-          },
-          "policies": {
-            "inbound": [
-              "firebase-jwt-inbound-2"
-            ]
-          }
-        },
-        "operationId": "4c3ec49a-e965-48b7-8c6a-4a5c77fbeca7"
-      }
-    },
-    "/hola": {
+    "/assignments": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
       "get": {
-        "summary": "asd",
+        "summary": "[COURSES]  Get all assignments",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "none",
           "handler": {
-            "export": "default",
-            "module": "$import(./modules/hello-world)",
-            "options": {}
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "c8910fb8-5d80-44ba-88a7-eb52278a3edd"
+      },
+      "post": {
+        "summary": "[COURSES]  Create a new assignment",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "4a510164-f0be-4899-aeee-395e9e4ffbd1"
+      }
+    },
+    "/assignments/{assignmentId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES]  Get assignment by ID",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "83614268-15f5-4f62-a5be-f9ee2a2caddf"
+      },
+      "put": {
+        "summary": "[COURSES]  Update Assingment ",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "1d70f5a3-4734-4bca-9b06-f753fdc047f2"
+      },
+      "delete": {
+        "summary": "[COURSES] Delete assignment",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "70dfdd94-f0aa-4384-ac39-e3a1b279dc11"
+      }
+    },
+    "/assignments/course/{courseId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get assignments by course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "4a95348f-fb8f-43c5-b517-0050d874b1b1"
+      }
+    },
+    "/assignments/{assignmentId}/submissions": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get all submissions for an assignment",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "48ee7bca-0012-462f-86df-d1bfe7241a14"
+      },
+      "post": {
+        "summary": "[COURSES] Create submission for assignment ",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "dcade1cf-4ca2-4982-a7f9-de7e2e2860fe"
+      }
+    },
+    "/assignments/{assignmentId}/submissions/{id}/submit": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[COURSES] Submit submission - (Es como hacer la entrega)",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "6ae62a73-639f-4d1a-bebd-762315aac096"
+      }
+    },
+    "/assignments/{assignmentId}/submissions/{id}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "put": {
+        "summary": "[COURSES] Update submission for assignment",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "a473aad7-a538-4d51-9878-e61bd8c22047"
+      },
+      "get": {
+        "summary": "[COURSES] Get a submission to an assignment by ID",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "e4e42538-d6a0-4320-8670-ba720f4f5836"
+      }
+    },
+    "/students/{studentUUID}/submissions": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES]  Get all submisions by student ID ",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "221bac35-2292-48ac-ae65-b78a92107232"
+      }
+    },
+    "/users/admin": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[USERS] Make an user an admin",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "63ea86dd-8f3b-4856-be1a-7d6a31e9256c"
+      }
+    },
+    "/courses/{courseId}/enroll": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[ENROLLMENTS] Enroll a student in a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "cc950d16-69a9-4453-af1c-8d326771c501"
+      }
+    },
+    "/courses/{courseId}/unenroll": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[ENROLLMENTS] Unenroll a student from a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "c69607f3-e05b-4f19-b601-afca6b88a8e7"
+      }
+    },
+    "/courses/student/{studentId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get all courses for a student",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "5e452d1c-c753-4a7b-ab0e-74c08ecf88f5"
+      }
+    },
+    "/courses/user/{userId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get all courses (teacher and student) for a user",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "baaca9a7-9433-4ece-990c-c8b481b4b461"
+      }
+    },
+    "/courses/docs": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES DOCS] Courses service docs",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "redirectHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "location": "https://courses-service-production.up.railway.app/swagger/index.html",
+              "status": 302
+            }
           },
           "policies": {
             "inbound": []
           }
         },
-        "operationId": "eb72dfc0-7aa1-4647-abb3-4ad4ef370462"
+        "operationId": "c667f22e-e05f-460c-a8d9-b199b1d1c1c9"
       }
     },
-    "/users/me/location": {
-      "x-zuplo-path": {
-        "pathMode": "open-api"
-      },
-      "post": {
-        "summary": "Defines a location for the user",
-        "description": "",
-        "x-zuplo-route": {
-          "corsPolicy": "none",
-          "handler": {
-            "export": "urlForwardHandler",
-            "module": "$import(@zuplo/runtime)",
-            "options": {
-              "baseUrl": "https://users-service-production-968d.up.railway.app"
-            }
-          },
-          "policies": {
-            "inbound": [
-              "firebase-jwt-inbound-3"
-            ]
-          }
-        },
-        "operationId": "eed57cbf-fa74-4402-987f-e7a411b43098"
-      }
-    },
-    "/users/me": {
+    "/courses/{courseId}/enrollments": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
       "get": {
-        "summary": "Retrieves user data",
+        "summary": "[ENROLLMENTS] Get all enrollments of a course",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "none",
@@ -133,19 +862,754 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "https://users-service-production-968d.up.railway.app"
+              "baseUrl": "https://courses-service-production.up.railway.app/"
             }
           },
           "policies": {
             "inbound": [
-              "firebase-jwt-inbound-4"
+              "bearer-token-verification"
             ]
           }
         },
-        "operationId": "f6363e48-445a-4f8b-893b-775d11dd897c"
+        "operationId": "ef48c38f-5d48-4ae4-b86d-8716521d8641"
+      }
+    },
+    "/courses/{courseId}/aux-teacher/add": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
       },
-      "patch": {
-        "summary": "Modifies user data",
+      "post": {
+        "summary": "[COURSES] Add an aux teacher to a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "f2910262-0499-41dc-8fc0-7946e6485adf"
+      }
+    },
+    "/courses/{courseId}/aux-teacher/remove": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "delete": {
+        "summary": "[COURSES] Remove an aux teacher to a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "79970054-37a8-4e04-be93-07f61ceab193"
+      }
+    },
+    "/assignments/{assignmentId}/submissions/{id}/grade": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "put": {
+        "summary": "[COURSES]  Grade an assignment",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "c7aff1f0-4b2a-42e2-85e8-c6e4aef67848"
+      }
+    },
+    "/user/token/{fcm_token}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "delete": {
+        "summary": "[NOTIFICATIONS] Remove an FCM token from the database (\"user-fcm-tokens\" table).",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://notifications-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "417a7562-4f84-463e-9457-245094eab396"
+      }
+    },
+    "/user/token": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[NOTIFICATIONS] Save/Update an FCM token in the database for a specific user.",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://notifications-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "db628c0b-0ef3-4dfa-a847-a67fd8f49e4b"
+      }
+    },
+    "/notifications/preferences": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[NOTIFICATIONS] Update user's notification preferences",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://notifications-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "9b5222e2-8642-44f6-a08c-c16432fab0f0"
+      }
+    },
+    "/users/forgot-password": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[USERS] Forgot password ",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "2ffbd750-878a-45d7-b100-5853dbb80eb3"
+      }
+    },
+    "/courses/{courseId}/favourite": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[COURSES] Fav a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "d2c50b42-7684-44fc-8841-36102c1ec9b7"
+      },
+      "delete": {
+        "summary": "[COURSES] Unfav a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "0b4471cf-b22e-4a18-af88-4071e66628ba"
+      }
+    },
+    "/courses/student/{studentId}/favourite": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get favourite courses for a student",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "6e155bce-cd26-4183-adb1-c3b5ce108618"
+      }
+    },
+    "/courses/{courseId}/student-feedback": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[FEEDBACK] Post a feedback for a student",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "57d8ab06-ce1c-477b-a890-47d2c6e570e3"
+      }
+    },
+    "/feedback/student/{studentId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "put": {
+        "summary": "[FEEDBACK] Get a student's feedback",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "f389b85a-15b9-4059-af95-ef69ea4bea1a"
+      }
+    },
+    "/courses/{courseId}/feedback": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[FEEDBACK] Post a feedback for a course as a student",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "ac77bb64-7e11-4d7b-b8e6-6888ffe58789"
+      },
+      "put": {
+        "summary": "[FEEDBACK] Get feedback for a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "4eb20505-e83f-4820-9aa1-7025e4595ebc"
+      }
+    },
+    "/feedback/student/{studentId}/summary": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[FEEDBACK] Get AI summary of feedbacks for a student",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "e5b42714-fb66-451c-a4de-767f105ed9c2"
+      }
+    },
+    "/courses/{courseId}/feedback/summary": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[FEEDBACK] Get AI summary of feedbacks for a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "03b32b97-4447-4f9d-8c09-293d6de9e5ab"
+      }
+    },
+    "/courses/{courseId}/members": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get course members",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "16c2d946-a86b-4662-bd17-a1aa3312d896"
+      }
+    },
+    "/forum/questions": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[FORUMS] Post a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "20fbf71d-e98b-4eb3-9b29-9b096fd02abe"
+      }
+    },
+    "/forum/courses/:courseId/questions": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[FOURMS] Get questions by course ID",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "af673e53-2ab7-4721-94cf-7dfc82a8e0c2"
+      }
+    },
+    "/forum/questions/{questionId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[FORUMS] Get a question by ID",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "611eba15-f863-427e-8585-4012d3bf8b8d"
+      },
+      "put": {
+        "summary": "[FOURMS] Update a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "8e3b6e1d-0c98-4728-80ee-f61c2f615dec"
+      },
+      "delete": {
+        "summary": "[FORUMS] Delete a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "93d1bfd8-3a46-4403-acac-6ed57b43283f"
+      }
+    },
+    "/forum/questions/{questionId}/answers": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[FORUMS] Add answer to a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "33b4fe3c-3be0-4abc-88fe-c38d4709df06"
+      }
+    },
+    "/forum/questions/{questionId}/answers/{answerId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "delete": {
+        "summary": "[FORUMS] Delete an answer to a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "a36ee9b8-2ee8-4da6-a2f2-5e179a26aeac"
+      },
+      "put": {
+        "summary": "[FORUMS] Update an answer",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "288ab3fc-fc1d-4d69-8cdb-a788edfb9fe9"
+      }
+    },
+    "/forum/questions/{questionId}/answers/{answerId}/accept": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[FOURMS] Accept an answer to a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "783c7478-818a-42c3-bee2-12fd46b42f41"
+      }
+    },
+    "/forum/questions/{questionId}/vote": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[FORUMS] Upvote/Downvote a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "3e97aa82-7c7d-4eb6-92aa-8ac2626f0470"
+      },
+      "delete": {
+        "summary": "[FORUMS] Remove a vote from a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "bc801750-0813-4dd0-ba3e-5c388b9632b4"
+      }
+    },
+    "/forum/questions/{questionId}/answers/{answerId}/vote": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[FORUMS] Upvote/Downvote an answer",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "5b50834d-fec9-4dc9-9770-04bf5196ebf3"
+      },
+      "delete": {
+        "summary": "[FORUMS] Remove a vote from an answer",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "d5c641d2-d33e-4879-8309-563f585b2f20"
+      }
+    },
+    "/forum/courses/{courseId}/search": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[FORUMS] Search a question",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "083a68ac-9157-4f32-9d8d-add3cb267446"
+      }
+    },
+    "/users/batch": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[USERS] Get users by a list of ids",
         "description": "",
         "x-zuplo-route": {
           "corsPolicy": "none",
@@ -158,11 +1622,36 @@
           },
           "policies": {
             "inbound": [
-              "firebase-jwt-inbound-5"
+              "bearer-token-verification"
             ]
           }
         },
-        "operationId": "511c9d43-515a-4570-b657-ea45e571de8d"
+        "operationId": "247619df-1ea5-48fa-a317-fec455703961"
+      }
+    },
+    "/users/block": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "[USERS] Block a user",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "anything-goes",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "8390ff96-60f3-45f0-a374-660ab1bd2038"
       }
     }
   }
