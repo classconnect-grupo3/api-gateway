@@ -49,10 +49,17 @@
     {
       "handler": {
         "export": "default",
-        "module": "$import(./modules/response-enrichment-policy)"
+        "module": "$import(./modules/response-enrichment-policy)",
+        "options": {
+          "enabled": true,
+          "enableUserEnrichment": true,
+          "enableCourseEnrichment": true,
+          "forwardAuthToken": true,
+          "includeAuthenticatedUser": true
+        }
       },
-      "name": "response-enrichment-policy",
-      "policyType": "custom-code-outbound"
+      "name": "response-enrichment",
+      "policyType": "response-enrichment"
     }
   ],
   "corsPolicies": [

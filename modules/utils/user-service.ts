@@ -4,13 +4,20 @@ interface UserBatchRequest {
     user_ids: string[];
 }
 
+interface UserData {
+    uid: string;
+    name: string;
+    email: string;
+    // Add other user fields as needed
+}
+
 interface UserBatchResponse {
-    data: Array<{
-        uid: string;
-        name: string;
-        surname: string;
-        // Add other user fields as needed
-    }>;
+    data: Array<UserData>;
+}
+
+export interface EnrichedUserData {
+    name: string;
+    email: string;
 }
 
 export class UserService {
@@ -20,7 +27,7 @@ export class UserService {
         userIds: string[],
         context: ZuploContext,
         authToken?: string
-    ): Promise<Map<string, string>> {
+    ): Promise<Map<string, EnrichedUserData>> {
         if (userIds.length === 0) {
             return new Map();
         }
@@ -56,13 +63,16 @@ export class UserService {
 
             const data: UserBatchResponse = await response.json();
 
-            // Create a map of user ID to user name
-            const userMap = new Map<string, string>();
+            // Create a map of user ID to user data (name and email)
+            const userMap = new Map<string, EnrichedUserData>();
             data.data.forEach(user => {
-                userMap.set(user.uid, `${user.name} ${user.surname}`);
+                userMap.set(user.uid, {
+                    name: user.name,
+                    email: user.email
+                });
             });
 
-            context.log.info(`Successfully fetched ${userMap.size} user names`);
+            context.log.info(`Successfully fetched ${userMap.size} user records with names and emails`);
             return userMap;
 
         } catch (error) {

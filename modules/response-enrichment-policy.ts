@@ -1,13 +1,14 @@
 import { ZuploContext, ZuploRequest } from "@zuplo/runtime";
 import { BodyEnricher } from "./utils/body-enricher";
 import { CourseService } from "./utils/course-service";
-import { UserService } from "./utils/user-service";
+import { EnrichedUserData, UserService } from "./utils/user-service";
 
 interface PolicyOptions {
     enabled?: boolean;
     enableUserEnrichment?: boolean;
     enableCourseEnrichment?: boolean;
     forwardAuthToken?: boolean;
+    includeAuthenticatedUser?: boolean;
 }
 
 export default async function ResponseEnrichmentPolicy(
@@ -62,6 +63,15 @@ export default async function ResponseEnrichmentPolicy(
         // Extract all IDs from the response body
         const extractedIds = BodyEnricher.extractIds(responseBody);
 
+        // Add authenticated user ID if available and option is enabled
+        if (options.includeAuthenticatedUser !== false) {
+            const user = (request as any).user;
+            if (user && user.sub) {
+                extractedIds.userIds.add(user.sub);
+                context.log.debug(`Added authenticated user ID to enrichment: ${user.sub}`);
+            }
+        }
+
         context.log.info(`Extracted ${extractedIds.userIds.size} user IDs and ${extractedIds.courseIds.size} course IDs`);
 
         // Skip enrichment if no IDs found
@@ -73,7 +83,7 @@ export default async function ResponseEnrichmentPolicy(
         // Fetch user and course data in parallel
         const promises: Promise<any>[] = [];
 
-        let userMap = new Map<string, string>();
+        let userMap = new Map<string, EnrichedUserData>();
         let courseMap = new Map<string, string>();
 
         if (options.enableUserEnrichment !== false && extractedIds.userIds.size > 0) {
@@ -95,7 +105,7 @@ export default async function ResponseEnrichmentPolicy(
         // Wait for all external service calls to complete
         await Promise.all(promises);
 
-        context.log.info(`Fetched ${userMap.size} user names and ${courseMap.size} course titles`);
+        context.log.info(`Fetched ${userMap.size} user records and ${courseMap.size} course titles`);
 
         // Skip enrichment if no data was fetched
         if (userMap.size === 0 && courseMap.size === 0) {
