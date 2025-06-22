@@ -3,17 +3,17 @@ import { ZuploContext } from "@zuplo/runtime";
 // Define the field mappings
 export const USER_FIELD_MAPPINGS = {
     // Single user ID fields
-    teacher_id: 'teacher_name',
-    teacher_uuid: 'teacher_name',
-    aux_teacher_id: 'aux_teacher_name',
-    student_id: 'student_name',
-    student_uuid: 'student_name',
-    author_id: 'author_name',
+    "teacher_id": 'teacher_name',
+    "teacher_uuid": 'teacher_name',
+    "aux_teacher_id": 'aux_teacher_name',
+    "student_id": 'student_name',
+    "student_uuid": 'student_name',
+    "author_id": 'author_name',
 
     // Array user ID fields
     teacher_ids: 'teacher_names',
-    aux_teacher_ids: 'aux_teacher_names',
-    students_ids: 'student_names'
+    aux_teachers_ids: 'aux_teachers_names',
+    students_ids: 'students_names'
 } as const;
 
 export const COURSE_FIELD_MAPPINGS = {

@@ -6,8 +6,9 @@ interface UserBatchRequest {
 
 interface UserBatchResponse {
     data: Array<{
-        id: string;
+        uid: string;
         name: string;
+        surname: string;
         // Add other user fields as needed
     }>;
 }
@@ -58,7 +59,7 @@ export class UserService {
             // Create a map of user ID to user name
             const userMap = new Map<string, string>();
             data.data.forEach(user => {
-                userMap.set(user.id, user.name);
+                userMap.set(user.uid, `${user.name} ${user.surname}`);
             });
 
             context.log.info(`Successfully fetched ${userMap.size} user names`);

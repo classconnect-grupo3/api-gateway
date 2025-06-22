@@ -79,13 +79,15 @@ export default async function ResponseEnrichmentPolicy(
         if (options.enableUserEnrichment !== false && extractedIds.userIds.size > 0) {
             promises.push(
                 UserService.getBatchUsers(Array.from(extractedIds.userIds), context, authToken)
-                    .then(map => { userMap = map; })
+                    .then(map => {
+                        userMap = map;
+                    })
             );
         }
 
         if (options.enableCourseEnrichment !== false && extractedIds.courseIds.size > 0) {
             promises.push(
-                CourseService.getBatchCourses(Array.from(extractedIds.courseIds), context, authToken)
+                CourseService.getBatchCourses(Array.from(extractedIds.courseIds), context)
                     .then(map => { courseMap = map; })
             );
         }

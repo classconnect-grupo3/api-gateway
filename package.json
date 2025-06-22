@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "zuplo dev",
-    "test": "zuplo test"
+    "test": "zuplo test",
+    "debug": "node --inspect-brk node_modules/@zuplo/cli/dist/cli.js dev"
   },
   "dependencies": {
     "zuplo": "^6"
