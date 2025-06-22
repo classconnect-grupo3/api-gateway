@@ -58,7 +58,7 @@
           "includeAuthenticatedUser": true
         }
       },
-      "name": "response-enrichment",
+      "name": "response-enrichment-policy",
       "policyType": "response-enrichment"
     }
   ],

@@ -7,6 +7,7 @@ interface UserBatchRequest {
 interface UserData {
     uid: string;
     name: string;
+    surname: string;
     email: string;
     // Add other user fields as needed
 }
@@ -67,7 +68,7 @@ export class UserService {
             const userMap = new Map<string, EnrichedUserData>();
             data.data.forEach(user => {
                 userMap.set(user.uid, {
-                    name: user.name,
+                    name: user.name + ' ' + user.surname,
                     email: user.email
                 });
             });

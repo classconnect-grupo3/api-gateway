@@ -27,7 +27,7 @@ export interface ExtractedIds {
 }
 
 export interface UserInfo {
-    user_id: string;
+    uid: string;
     name: string;
     email: string;
 }
@@ -135,7 +135,7 @@ export class BodyEnricher {
 
         userMap.forEach((userData, userId) => {
             userInfoArray.push({
-                user_id: userId,
+                uid: userId,
                 name: userData.name,
                 email: userData.email
             });
