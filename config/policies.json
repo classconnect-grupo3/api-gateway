@@ -11,13 +11,59 @@
       },
       "name": "bearer-token-verification",
       "policyType": "firebase-jwt-inbound"
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/check-token-and-user-blocked)",
+        "options": {
+          "allowUnauthenticatedRequests": false
+        }
+      },
+      "name": "user-blocked-check",
+      "policyType": "user-blocked-check"
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/check-token-and-user-blocked)",
+        "options": {
+          "allowUnauthenticatedRequest": false,
+          "firebaseProjectId": "users-service-auth-4b330"
+        }
+      },
+      "name": "check-token-and-user-blocked",
+      "policyType": "custom-code-inbound"
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/check-user-isActive)",
+        "options": {
+          "usersServiceBaseUrl": "https://users-service-production-968d.up.railway.app"
+        }
+      },
+      "name": "check-user-is-active",
+      "policyType": "custom-code-inbound"
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/response-enrichment-policy)"
+      },
+      "name": "response-enrichment-policy",
+      "policyType": "custom-code-outbound"
     }
   ],
-    "corsPolicies": [
+  "corsPolicies": [
     {
       "name": "custom-cors",
       "allowedOrigins": "https://web-backoffice-production-b8e3.up.railway.app",
-      "allowedMethods": ["OPTIONS", "POST", "GET"],
+      "allowedMethods": [
+        "OPTIONS",
+        "POST",
+        "GET"
+      ],
       "allowCredentials": true
     }
   ]

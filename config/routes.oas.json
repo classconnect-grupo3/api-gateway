@@ -46,7 +46,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -71,7 +71,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -91,7 +91,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -139,7 +139,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -159,7 +159,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -184,7 +184,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -209,7 +209,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -234,7 +234,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -259,7 +259,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -278,7 +278,9 @@
             }
           },
           "policies": {
-            "inbound": []
+            "inbound": [
+              "check-token-and-user-blocked"
+            ]
           }
         },
         "operationId": "1d25b459-f2e2-4d51-b24c-7d01d4072d4d"
@@ -301,7 +303,9 @@
             }
           },
           "policies": {
-            "inbound": []
+            "inbound": [
+              "check-token-and-user-blocked"
+            ]
           }
         },
         "operationId": "764d0503-8fc1-4740-8687-2970d0692015"
@@ -325,7 +329,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -350,7 +354,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -375,7 +379,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -395,7 +399,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -443,7 +447,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -463,7 +467,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -488,7 +492,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -508,7 +512,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -528,7 +532,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -553,7 +557,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -578,7 +582,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -598,7 +602,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -623,7 +627,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -648,7 +652,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -668,7 +672,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -693,7 +697,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -718,7 +722,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -743,7 +747,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -768,7 +772,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -793,7 +797,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -818,7 +822,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -867,7 +871,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -915,7 +919,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -940,7 +944,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1057,7 +1061,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1077,7 +1081,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1102,7 +1106,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1127,7 +1131,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1152,7 +1156,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1177,7 +1181,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1197,7 +1201,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1222,7 +1226,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1247,7 +1251,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1272,7 +1276,10 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1297,14 +1304,14 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
         "operationId": "20fbf71d-e98b-4eb3-9b29-9b096fd02abe"
       }
     },
-    "/forum/courses/:courseId/questions": {
+    "/forum/courses/{courseId}/questions": {
       "x-zuplo-path": {
         "pathMode": "open-api"
       },
@@ -1322,7 +1329,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1347,7 +1354,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1367,7 +1374,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1387,7 +1394,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1412,7 +1419,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1437,7 +1444,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1457,7 +1464,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1482,7 +1489,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1507,7 +1514,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1527,7 +1534,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1552,7 +1559,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1572,7 +1579,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1597,7 +1604,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1622,7 +1629,7 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
@@ -1647,11 +1654,36 @@
           },
           "policies": {
             "inbound": [
-              "bearer-token-verification"
+              "check-token-and-user-blocked"
             ]
           }
         },
         "operationId": "8390ff96-60f3-45f0-a374-660ab1bd2038"
+      }
+    },
+    "/assignments/{assignmentId}/submissions/{id}/feedback-summary": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "Get summary of feedback with AI ",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app/"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "check-token-and-user-blocked"
+            ]
+          }
+        },
+        "operationId": "0a281026-7c4c-4d7f-a7a0-5907e37ee49c"
       }
     }
   }
