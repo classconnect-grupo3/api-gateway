@@ -160,6 +160,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -210,7 +213,8 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
-            ]
+            ],
+            "outbound": []
           }
         },
         "operationId": "e5b2a46a-01ae-42a4-9061-ce6b8ad4a7f6"
@@ -235,6 +239,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -280,6 +287,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -400,6 +410,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -448,6 +461,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -583,6 +599,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -603,6 +622,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -653,6 +675,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -673,6 +698,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -698,6 +726,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -717,12 +748,13 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "https://courses-service-production.up.railway.app/"
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
             }
           },
           "policies": {
             "inbound": [
-              "check-token-and-user-blocked"
+              "check-token-and-user-blocked",
+              "check-user-is-admin"
             ]
           }
         },
@@ -748,6 +780,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -773,6 +808,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -798,6 +836,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -823,6 +864,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -872,6 +916,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1107,6 +1154,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1157,6 +1207,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1202,6 +1255,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1305,6 +1361,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1330,6 +1389,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1355,6 +1417,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1375,6 +1440,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1420,6 +1488,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1445,6 +1516,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1465,6 +1539,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1490,6 +1567,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1605,6 +1685,9 @@
           "policies": {
             "inbound": [
               "check-token-and-user-blocked"
+            ],
+            "outbound": [
+              "response-enrichment-policy"
             ]
           }
         },
@@ -1649,12 +1732,12 @@
             "export": "urlForwardHandler",
             "module": "$import(@zuplo/runtime)",
             "options": {
-              "baseUrl": "https://courses-service-production.up.railway.app/"
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
             }
           },
           "policies": {
             "inbound": [
-              "check-token-and-user-blocked"
+              "check-user-is-admin"
             ]
           }
         },
@@ -1684,6 +1767,427 @@
           }
         },
         "operationId": "0a281026-7c4c-4d7f-a7a0-5907e37ee49c"
+      }
+    },
+    "/users/admin/stats": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "Stats for backoffice from users",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "check-token-and-user-blocked"
+            ]
+          }
+        },
+        "operationId": "1b4dbc1b-5cb3-4a8a-bccc-3f5293eb2817"
+      }
+    },
+    "/path-1": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://echo.zuplo.io"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "05ccd1b6-d833-48b8-89d8-3d61f4117930"
+      }
+    },
+    "/path-2": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://echo.zuplo.io"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "8bce4f4e-a902-45ad-a5d1-96a79b1ac1b3"
+      }
+    },
+    "/path-3": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://echo.zuplo.io"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "51b10452-179a-42ba-a1ae-0b58b254cc66"
+      }
+    },
+    "/path-4": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://echo.zuplo.io"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "9e288ec9-f25b-4503-804b-953f9efbefbe"
+      }
+    },
+    "/path-5": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://echo.zuplo.io"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "4f2d7b4e-adba-4679-914b-4366d0e43d00"
+      }
+    },
+    "/path-6": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://echo.zuplo.io"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "c42ee0e0-c0de-4885-9083-d54bd421210b"
+      }
+    },
+    "/statistics/courses/{courseId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get a Course Statistics",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "56c2b471-ba3c-45f3-8939-b7ff95d02db4"
+      }
+    },
+    "/statistics/students/{studentId}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get Student Statistics",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "b169b576-ac09-497a-b9d3-900d1bfbdccb"
+      }
+    },
+    "/statistics/teachers/{teacherId}/courses": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get Teacher's Courses Statistics",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "29a10e65-b2af-450f-8287-fd3e0c8cb979"
+      }
+    },
+    "/path-7": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://echo.zuplo.io"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "a8a189b7-160d-4131-b8da-e4599144fa44"
+      }
+    },
+    "/path-8": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "notifications-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "0064aa81-df89-473e-9c0b-70ecf0ae39ee"
+      }
+    },
+    "/user/tokens/{uid}": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[NOTIFICATIONS] Get User's FCM Tokens",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://notifications-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "51210b0f-250c-4798-8e90-e861337350d5"
+      }
+    },
+    "/forum/courses/{courseId}/participants": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "get": {
+        "summary": "[COURSES] Get forum participants",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": []
+          }
+        },
+        "operationId": "9e0e0fe0-04b5-4617-88d1-ef07a9b0dd11"
+      }
+    },
+    "/users/unlock": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "post": {
+        "summary": "New Route",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "check-user-is-admin",
+              "bearer-token-verification"
+            ]
+          }
+        },
+        "operationId": "c74f95ea-424c-4dc3-96c9-c8af8cab6966"
+      },
+      "get": {
+        "summary": "[USERS] Unlock user",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://users-service-production-968d.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "bearer-token-verification",
+              "check-user-is-admin"
+            ]
+          }
+        },
+        "operationId": "fe735b7c-eec6-4813-a2eb-f0a3df8a63c5"
+      }
+    },
+    "/courses/{courseId}/students/{studentId}/approve": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "put": {
+        "summary": "[COURSES] Approve a student from a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "check-token-and-user-blocked"
+            ]
+          }
+        },
+        "operationId": "a5fd99b3-9902-409e-aa8f-91c95f7ae379"
+      }
+    },
+    "/courses/{courseId}/students/{studentId}/disapprove": {
+      "x-zuplo-path": {
+        "pathMode": "open-api"
+      },
+      "put": {
+        "summary": "[COURSES] Disapprove a student form a course",
+        "description": "",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "https://courses-service-production.up.railway.app"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "check-token-and-user-blocked"
+            ]
+          }
+        },
+        "operationId": "bfd1dfe5-2734-4927-9369-54b482c6064f"
       }
     }
   }

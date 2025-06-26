@@ -64,7 +64,7 @@ export default async function policy(
     method: request.method,
     headers: request.headers,
     body: body_txt, // volvés a usar el mismo body
-  });
+    });
 
   return newRequest;
   } catch (error) {

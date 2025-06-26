@@ -53,6 +53,17 @@
       },
       "name": "response-enrichment-policy",
       "policyType": "custom-code-outbound"
+    },
+    {
+      "handler": {
+        "export": "default",
+        "module": "$import(./modules/check-user-is-admin)",
+        "options": {
+          "usersServiceBaseUrl": "https://users-service-production-968d.up.railway.app"
+        }
+      },
+      "name": "check-user-is-admin",
+      "policyType": "custom-code-inbound"
     }
   ],
   "corsPolicies": [
